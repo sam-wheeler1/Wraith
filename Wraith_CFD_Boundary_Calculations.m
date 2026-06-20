@@ -2,6 +2,8 @@ clear
 clc
 close all
 
+% Author: Sam Wheeler
+
 % This script is designed to calculate the inlet and outlet pressure
 % that will be applied in CFD on the inlet and thrust tube system
 
@@ -63,18 +65,29 @@ mdot_edf = rho.*fan_swept_area.*((v_exit + v_static)./2);
 %----------------
 
 for i = 1:length(altitude)
-    fprintf("----- Altitude: %.0f m -----\n", altitude(i))
-    
-    fprintf("Inlet Boundary: Pressure Far-Field\n")
-    fprintf("  Static Pressure: %.1f Pa\n", static_pressure(i))
-    fprintf("  Static Temperature: %.2f K\n", temperature_K(i))
-    fprintf("  Freestream Mach Number: %.3f\n", freestream_Mach(i))
-    fprintf("  Freestream Total Pressure: %.1f Pa\n\n", total_pressure(i))
-    
-    fprintf("EDF Boundary: Mass Flow at Fan Faces\n")
-    fprintf("  Mass Flow Rate In: %.3f kg/s\n", mdot_edf(i))
-    fprintf("  Mass Flow Rate Out: %.3f kg/s\n\n", mdot_edf(i))
-    
-    fprintf("Thrust Tube Exit Boundary: Pressure Outlet\n")
-    fprintf("  Static Pressure: %.1f Pa\n\n\n", static_pressure(i))
+
+    fprintf("---------------------------------\n")
+    fprintf("Altitude: %.0f m\n", altitude(i))
+    fprintf("---------------------------------\n\n")
+
+    fprintf("Part 1: Inlet Geometry Study\n")
+    fprintf("  Inlet Boundary: Pressure Far-Field\n")
+    fprintf("    Static Pressure: %.1f Pa\n", static_pressure(i))
+    fprintf("    Static Temperature: %.2f K\n", temperature_K(i))
+    fprintf("    Freestream Mach Number: %.3f\n", freestream_Mach(i))
+    fprintf("    Freestream Total Pressure: %.1f Pa\n", total_pressure(i))
+    fprintf("  Exit Boundary: Mass Flow Outlet\n")
+    fprintf("    Mass Flow Rate: %.3f kg/s\n\n", mdot_edf(i))
+
+    fprintf("Part 2: EDF Study\n")
+    fprintf("  EDF Boundary: Mass Flow at Fan Faces\n")
+    fprintf("    Mass Flow Rate In: %.3f kg/s\n", mdot_edf(i))
+    fprintf("    Mass Flow Rate Out: %.3f kg/s\n\n", mdot_edf(i))
+
+    fprintf("Part 3: Thrust Tube Study\n")
+    fprintf("  Inlet Boundary: Mass Flow Inlet\n")
+    fprintf("    Mass Flow Rate: %.3f kg/s\n", mdot_edf(i))
+    fprintf("  Exit Boundary: Pressure Outlet\n")
+    fprintf("    Static Pressure: %.1f Pa\n\n\n", static_pressure(i))
+
 end
