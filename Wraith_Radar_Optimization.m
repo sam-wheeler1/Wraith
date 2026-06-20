@@ -2,6 +2,8 @@ clear;
 clc;
 close all;
 
+% Author Sam Wheeler
+
 % HOW TO USE:
 % 1. Put in the area for however many panels you want to test. Write there
 %    respective names as well. Since the aircraft is symmetric, you only
