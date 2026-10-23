@@ -6,7 +6,6 @@
 
 ## Start here
 
-- [Project status and evidence](docs/project-status.md) — what is in GitHub, what is reported but not yet archived, and what still needs verification.
 - [Engineering workflow](docs/engineering-workflow.md) — expectations for calculations, units, assumptions, validation, and commit history.
 - [Analysis index](analysis/README.md) — MATLAB/Python calculation inventory.
 - [Design decision log](docs/decisions/README.md) — why configurations are selected or rejected.
@@ -25,7 +24,7 @@
 ## Repository layout
 
 - `analysis/`: executable scripts, derived models, and their documentation.
-- `docs/`: project status, decision records, methods, and templates.
+- `docs/`: decision records, engineering methods, and templates.
 - `data/`: small, documented input measurements or reference datasets (create as needed).
 - `cad/`: versioned design exports or links to controlled CAD releases (create as needed).
 - `simulation/`: solver setup descriptions, small configuration files, and result summaries (create as needed).
