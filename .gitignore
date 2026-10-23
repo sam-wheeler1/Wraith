@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# MATLAB autosave / generated binaries
+*.asv
+*.m~
+*.mex*
+slprj/
+*.slxc
+
+# ANSYS / CFD / FEA intermediate files (keep selected reports separately)
+*.cas.h5
+*.dat.h5
+*.rst
+*.rth
+*.rmg
+*.db
+*.lock
+*.lck
+*.bak
+*.wbpj_files/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Do not ignore raw engineering measurements by default.
