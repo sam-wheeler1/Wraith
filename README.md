@@ -31,12 +31,3 @@
 - `simulation/`: solver setup descriptions, small configuration files, and result summaries (create as needed).
 - `tests/`: test plans, logs, scripts, and measured-versus-predicted comparisons (create as needed).
 
-Do **not** commit large solver caches, generated meshes, or untraceable binary exports. Store a reproducible setup plus selected results; link to external artifact storage when files are too large.
-
-## Current code
-
-The existing MATLAB calculation was moved **without changing its equations or numerical behavior** to [analysis/propulsion/Wraith_CFD_Boundary_Calculations.m](analysis/propulsion/Wraith_CFD_Boundary_Calculations.m). Its existing assumptions require verification before results are used as design inputs. See the [analysis index](analysis/README.md).
-
-## Guiding principle
-
-The result alone is not the deliverable. Record the physics, equations, assumptions, code, verification, and design conclusion, so another engineer can understand and reproduce the work.
