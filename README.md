@@ -2,26 +2,6 @@
 
 **Project goal:** Develop a fixed-wing, electric-ducted-fan UAV concept for remote communications relay applications while building a rigorous, reproducible understanding of aircraft engineering.
 
-> **Status: Research and development.** This repository is an engineering notebook and design record, not evidence that a complete aircraft has been built or flight-qualified.
-
-## Start here
-
-- [Project status and evidence](docs/project-status.md) — what is in GitHub, what is reported but not yet archived, and what still needs verification.
-- [Engineering workflow](docs/engineering-workflow.md) — expectations for calculations, units, assumptions, validation, and commit history.
-- [Analysis index](analysis/README.md) — MATLAB/Python calculation inventory.
-- [Design decision log](docs/decisions/README.md) — why configurations are selected or rejected.
-- [Analysis report template](docs/templates/analysis-report.md) — a consistent record for calculations, simulations, and tests.
-
-## Engineering areas
-
-| Workstream | Intended questions | Current repository evidence |
-| --- | --- | --- |
-| Aircraft configuration & aerodynamics | Wing sizing, airfoils, stability, controls, performance | Not yet committed |
-| Propulsion & inlet | EDF operating point, pressure recovery, duct/nozzle design | [CFD boundary calculation](analysis/propulsion/Wraith_CFD_Boundary_Calculations.m) |
-| Structures | Wing loads, spars, deflection, stress, vibration | Not yet committed |
-| Controls & instrumentation | DAQ, safety interlocks, sensors, flight control | Not yet committed |
-| Testing & verification | Bench measurements, uncertainty, CFD/FEA correlation | Not yet committed |
-
 ## Repository layout
 
 - `analysis/`: executable scripts, derived models, and their documentation.
