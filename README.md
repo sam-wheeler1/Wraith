@@ -1,41 +1,26 @@
 # Wraith — Fixed-Wing EDF UAV
 
-**Project goal:** Develop a fixed-wing, electric-ducted-fan UAV concept for remote communications relay applications while building a rigorous, reproducible understanding of aircraft engineering.
+Wraith is a fixed-wing, electric-ducted-fan UAV project exploring remote communications relay applications. The project also serves as a hands-on aircraft engineering effort, using analytical calculations, design studies, simulations and testing to justify design choices.
 
-> **Status: Research and development.** This repository is an engineering notebook and design record, not evidence that a complete aircraft has been built or flight-qualified.
+**Status:** Research and development. Analyses and results should be interpreted with their stated assumptions and validation status.
 
-## Start here
+## Repository content
 
-- [Engineering workflow](docs/engineering-workflow.md) — expectations for calculations, units, assumptions, validation, and commit history.
-- [Analysis index](analysis/README.md) — MATLAB/Python calculation inventory.
-- [Design decision log](docs/decisions/README.md) — why configurations are selected or rejected.
-- [Analysis report template](docs/templates/analysis-report.md) — a consistent record for calculations, simulations, and tests.
+- **README.md:** Project overview and navigation.
+- **analysis/:** Reproducible MATLAB and Python engineering scripts, organized by discipline.
+- **docs/decisions/:** Individual design decision reports, added when a decision is documented.
+- **results/:** Selected figures, tables, test measurements and simulation summaries, added alongside source scripts and reports.
 
-## Engineering areas
+This repository stores engineering artifacts, not personal checklists, process manuals, or empty templates. New directories will appear when they contain actual work.
 
-| Workstream | Intended questions | Current repository evidence |
+## Available scripts
+
+| File | Purpose | Status |
 | --- | --- | --- |
-| Aircraft configuration & aerodynamics | Wing sizing, airfoils, stability, controls, performance | Not yet committed |
-| Propulsion & inlet | EDF operating point, pressure recovery, duct/nozzle design | [CFD boundary calculation](analysis/propulsion/Wraith_CFD_Boundary_Calculations.m) |
-| Structures | Wing loads, spars, deflection, stress, vibration | Not yet committed |
-| Controls & instrumentation | DAQ, safety interlocks, sensors, flight control | Not yet committed |
-| Testing & verification | Bench measurements, uncertainty, CFD/FEA correlation | Not yet committed |
+| [CFD boundary calculations](analysis/propulsion/Wraith_CFD_Boundary_Calculations.m) | Estimates inlet freestream conditions and EDF mass flow for CFD boundary conditions at several altitudes | Preliminary; assumptions and fan operating-point model have not been independently validated |
 
-## Repository layout
+The existing MATLAB script was relocated without changing its equations. Its mass-flow estimate should not be interpreted as a measured or validated EDF performance map.
 
-- `analysis/`: executable scripts, derived models, and their documentation.
-- `docs/`: decision records, engineering methods, and templates.
-- `data/`: small, documented input measurements or reference datasets (create as needed).
-- `cad/`: versioned design exports or links to controlled CAD releases (create as needed).
-- `simulation/`: solver setup descriptions, small configuration files, and result summaries (create as needed).
-- `tests/`: test plans, logs, scripts, and measured-versus-predicted comparisons (create as needed).
+## Engineering record
 
-Do **not** commit large solver caches, generated meshes, or untraceable binary exports. Store a reproducible setup plus selected results; link to external artifact storage when files are too large.
-
-## Current code
-
-The existing MATLAB calculation was moved **without changing its equations or numerical behavior** to [analysis/propulsion/Wraith_CFD_Boundary_Calculations.m](analysis/propulsion/Wraith_CFD_Boundary_Calculations.m). Its existing assumptions require verification before results are used as design inputs. See the [analysis index](analysis/README.md).
-
-## Guiding principle
-
-The result alone is not the deliverable. Record the physics, equations, assumptions, code, verification, and design conclusion, so another engineer can understand and reproduce the work.
+Each meaningful script, decision report or result should be self-contained enough to explain its assumptions, governing physics, units, inputs, interpretation and validation status. Report links should connect to the associated scripts and result files as those artifacts are added.
